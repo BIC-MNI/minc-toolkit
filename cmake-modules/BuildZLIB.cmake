@@ -19,7 +19,7 @@ ExternalProject_Add(ZLIB
 
 
 SET(ZLIB_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include )
-SET(ZLIB_LIBRARY     ${staging_prefix}/${install_prefix}/lib/libz.a )
+SET(ZLIB_LIBRARY     ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libz.a )
 SET(ZLIB_FOUND ON)
 
 
