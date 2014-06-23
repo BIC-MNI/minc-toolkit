@@ -23,7 +23,7 @@ macro(build_fftw3f install_prefix staging_prefix)
       )
 
 SET(FFTW3F_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include )
-SET(FFTW3F_LIBRARY  ${staging_prefix}/${install_prefix}/lib/libfftw3f.a )
+SET(FFTW3F_LIBRARY  ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libfftw3f.a )
 SET(FFTW3F_FOUND ON)
 
 

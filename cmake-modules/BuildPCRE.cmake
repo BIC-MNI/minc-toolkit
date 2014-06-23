@@ -12,8 +12,8 @@ ExternalProject_Add(PCRE
 )
 
 SET(PCRE_INCLUDE_DIR  ${staging_prefix}/${install_prefix}/include )
-SET(PCRE_LIBRARY      ${staging_prefix}/${install_prefix}/lib/libpcre.a )
-SET(PCRECPP_LIBRARY   ${staging_prefix}/${install_prefix}/lib/libpcrecpp.a )
+SET(PCRE_LIBRARY      ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libpcre.a )
+SET(PCRECPP_LIBRARY   ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libpcrecpp.a )
 SET(PCRE_FOUND ON)
  
 

@@ -13,7 +13,7 @@ ExternalProject_Add(PCREPP
 )
 
 SET(PCREPP_INCLUDE_DIR ${staging_prefix}/include )
-SET(PCREPP_LIBRARY     ${staging_prefix}/lib/libpcre++.a )
+SET(PCREPP_LIBRARY     ${staging_prefix}/lib${LIB_SUFFIX}/libpcre++.a )
 SET(PCREPP_FOUND ON)
 
 endmacro(build_pcrepp)

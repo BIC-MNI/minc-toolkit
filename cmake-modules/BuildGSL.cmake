@@ -13,8 +13,8 @@ ExternalProject_Add(GSL
       )
 
 SET(GSL_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include )
-SET(GSL_LIBRARY  ${staging_prefix}/${install_prefix}/lib/libgsl.a )
-SET(GSL_CBLAS_LIBRARY ${staging_prefix}/${install_prefix}/lib/libgslcblas.a )
+SET(GSL_LIBRARY  ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libgsl.a )
+SET(GSL_CBLAS_LIBRARY ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libgslcblas.a )
 SET(GSL_FOUND ON)
 
 endmacro(build_gsl)
