@@ -1,6 +1,5 @@
 macro(build_zlib install_prefix staging_prefix)
   
-  
   #SET(CFLAGS ${CMAKE_C_FLAGS})
   #LIST(APPEND CFLAGS -fPIC)
 set(ENV{CFLAGS} "${CMAKE_C_FLAGS} -fPIC")
@@ -20,7 +19,7 @@ ExternalProject_Add(ZLIB
 
 
 SET(ZLIB_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include )
-SET(ZLIB_LIBRARY     ${staging_prefix}/${install_prefix}/lib/libz.a )
+SET(ZLIB_LIBRARY     ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libz.a )
 SET(ZLIB_FOUND ON)
 
 

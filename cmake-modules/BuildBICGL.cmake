@@ -45,5 +45,4 @@ macro(build_bicgl bicgl_location install_prefix staging_prefix)
   set(BICGL_INCLUDE_DIRS "${CMAKE_CURRENT_BINARY_DIR}/bicgl/OpenGL_graphics/Include;${CMAKE_CURRENT_BINARY_DIR}/bicgl/Include;${CMAKE_CURRENT_BINARY_DIR}/bicgl/GLUT_windows/Include")
   set(BICGL_LIBRARY_DIRS "${CMAKE_CURRENT_BINARY_DIR}/bicgl-build")
   set(BICGL_LIBRARIES    "bicgl")
-    
 endmacro(build_bicgl)
