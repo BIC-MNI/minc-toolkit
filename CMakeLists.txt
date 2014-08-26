@@ -73,7 +73,7 @@ OPTION(MT_BUILD_ITK_TOOLS    "Build ITK-based tools"  OFF)
 OPTION(MT_BUILD_VISUAL_TOOLS "Build visual tools (Display, Register, postf, ray_trace) requires OpenGL & Glut"  OFF)
 OPTION(USE_SYSTEM_ITK        "Use System ITK" OFF)
 OPTION(MT_USE_OPENMP         "Use OpenMP multi-threading, right now applies only to FFTW" OFF)
-
+OPTION(MNI_AUTOREG_OLD_AMOEBA_INIT "Use old-style (asymmetric) amoeba init in mni_autoreg" ON)
 
 IF(MT_BUILD_LITE)
   SET(MT_BUILD_ITK_TOOLS    OFF)
