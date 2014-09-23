@@ -30,7 +30,7 @@ macro(build_itkv3 install_prefix staging_prefix)
 #    URL "http://downloads.sourceforge.net/project/itk/itk/3.20/InsightToolkit-3.20.1.tar.gz"
 #    URL_MD5 "90342ffa78bd88ae48b3f62866fbf050"
     GIT_REPOSITORY "https://github.com/vfonov/ITK.git" #"http://itk.org/ITK.git"
-    GIT_TAG "f91193be7e75c62e21ec95427646c1a0d4e8cec3"
+    GIT_TAG "537ecca3a2762908c96508ab6f667c049aba44f6"
     UPDATE_COMMAND ""
     SOURCE_DIR ITKv3
     BINARY_DIR ITKv3-build
