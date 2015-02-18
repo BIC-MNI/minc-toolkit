@@ -282,6 +282,7 @@ ADD_SUBDIRECTORY(inormalize)
 ADD_SUBDIRECTORY(mrisim)
 ADD_SUBDIRECTORY(bic-pipelines)
 ADD_SUBDIRECTORY(perl-modules)
+ADD_SUBDIRECTORY(ILT)
 
 #required for EZminc
 IF(USE_SYSTEM_GSL)
