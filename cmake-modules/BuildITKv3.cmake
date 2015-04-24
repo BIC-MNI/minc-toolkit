@@ -59,7 +59,7 @@ macro(build_itkv3 install_prefix staging_prefix)
         -DUUID_INCLUDE_DIR:PATH= # to avoid dependecy on libuuid for now
         -DUUID_LIBRARY:FILEPATH= # to avoid dependecy on libuuid for now
         -DKWSYS_USE_MD5:BOOL=ON # Required by SlicerExecutionModel
-    INSTALL_COMMAND make install DESTDIR=${staging_prefix}
+    INSTALL_COMMAND $(MAKE) install DESTDIR=${staging_prefix}
     INSTALL_DIR ${staging_prefix}/${install_prefix}
   )
   #FORCE_BUILD_CHECK(ITKv3)

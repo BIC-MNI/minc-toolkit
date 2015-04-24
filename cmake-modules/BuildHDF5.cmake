@@ -8,8 +8,8 @@ ExternalProject_Add(HDF5
   URL_MD5 "1a4cc04f7dbe34e072ddcf3325717504"
   BUILD_IN_SOURCE 1
   INSTALL_DIR     "${CMAKE_BINARY_DIR}/external"
-  BUILD_COMMAND   make 
-  INSTALL_COMMAND make DESTDIR=${CMAKE_BINARY_DIR}/external install 
+  BUILD_COMMAND   $(MAKE) 
+  INSTALL_COMMAND $(MAKE) DESTDIR=${CMAKE_BINARY_DIR}/external install 
   CONFIGURE_COMMAND  ./configure --prefix=${install_prefix} --with-zlib=${zlib_include_dir},${zlib_library_dir} --with-pic --disable-shared --enable-cxx --disable-f77 --disable-f90 --disable-examples --disable-hl --disable-docs --libdir=${install_prefix}/lib${LIB_SUFFIX} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 #  INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/external
 )

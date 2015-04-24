@@ -42,7 +42,7 @@ macro(build_C3D C3D_location install_prefix staging_prefix)
         -DCMAKE_MODULE_LINKER_FLAGS=${CMAKE_MODULE_LINKER_FLAGS}
         -DCMAKE_SHARED_LINKER_FLAGS=${CMAKE_SHARED_LINKER_FLAGS}
         ${CMAKE_OSX_EXTERNAL_PROJECT_ARGS}
-    INSTALL_COMMAND make install DESTDIR=${staging_prefix}
+    INSTALL_COMMAND $(MAKE) install DESTDIR=${staging_prefix}
     INSTALL_DIR ${staging_prefix}/${install_prefix}
   )
 endmacro(build_C3D)
