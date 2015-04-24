@@ -9,12 +9,12 @@ macro(build_itkv3 install_prefix staging_prefix)
   
   set(CMAKE_OSX_EXTERNAL_PROJECT_ARGS)
   if(APPLE)
-    SET(ANTS_CXX_COMPILER "${CMAKE_CXX_COMPILER}" CACHE FILEPATH "C++ Compiler for ANTS")
-    SET(ANTS_C_COMPILER "${CMAKE_C_COMPILER}" CACHE FILEPATH "C Compiler for ANTS")
+    SET(ANTS_CXX_COMPILER "${CMAKE_CXX_COMPILER}" CACHE FILEPATH "C++ Compiler for ITK")
+    SET(ANTS_C_COMPILER "${CMAKE_C_COMPILER}" CACHE FILEPATH "C Compiler for ITK")
     list(APPEND CMAKE_OSX_EXTERNAL_PROJECT_ARGS
-      -DCMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}
-      -DCMAKE_OSX_SYSROOT=${CMAKE_OSX_SYSROOT}
-      -DCMAKE_OSX_DEPLOYMENT_TARGET=${CMAKE_OSX_DEPLOYMENT_TARGET}
+      -DCMAKE_OSX_ARCHITECTURES:STRING=${CMAKE_OSX_ARCHITECTURES}
+      -DCMAKE_OSX_SYSROOT:STRING=${CMAKE_OSX_SYSROOT}
+      -DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=${CMAKE_OSX_DEPLOYMENT_TARGET}
       -DCMAKE_C_COMPILER:FILEPATH=${ANTS_C_COMPILER}
       -DCMAKE_CXX_COMPILER:FILEPATH=${ANTS_CXX_COMPILER}
     )
@@ -29,8 +29,10 @@ macro(build_itkv3 install_prefix staging_prefix)
   ExternalProject_Add(ITKv3
 #    URL "http://downloads.sourceforge.net/project/itk/itk/3.20/InsightToolkit-3.20.1.tar.gz"
 #    URL_MD5 "90342ffa78bd88ae48b3f62866fbf050"
-    GIT_REPOSITORY "https://github.com/vfonov/ITK.git" #"http://itk.org/ITK.git"
-    GIT_TAG "f91193be7e75c62e21ec95427646c1a0d4e8cec3"
+#    GIT_REPOSITORY "https://github.com/vfonov/ITK.git" #"http://itk.org/ITK.git"
+#    GIT_TAG "537ecca3a2762908c96508ab6f667c049aba44f6"
+    URL     "https://github.com/vfonov/ITK/archive/release-3.20-fix-libtiff-v1.tar.gz"
+    URL_MD5 "bba1ad3c4d0817f94bb34653acbba9c0"
     UPDATE_COMMAND ""
     SOURCE_DIR ITKv3
     BINARY_DIR ITKv3-build

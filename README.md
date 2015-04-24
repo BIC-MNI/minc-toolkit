@@ -34,16 +34,19 @@ Here is a list of bundled packages:
 
 ##Installation
 
-Installing from github, need CMake > 2.6 , preferably > 2.8.3 
+Installing from github, need CMake > 2.8.8 
 =======
 <pre><code>
   git clone --recursive git://github.com/BIC-MNI/minc-toolkit.git minc-toolkit
   cd minc-toolkit
   mkdir build && cd build
-  ccmake .. # Enter the location of all dependencies, if not detected automatically ...
+  ccmake .. # Enter the location of all dependencies, if not detected automatically ..., 
   make && make test && make install
 </code></pre>
-
+Important: **CMAKE_BUILD_TYPE is set to RELEASE by default, if you have older build set it manually or face severe speed degradation of some tools**
+<pre><code>
+  cmake -DCMAKE_BUILD_TYPE:STRING=Release .
+</code></pre>
 ##Dependencies
 
 ###Following packages are needed to compile all tools:
@@ -62,7 +65,7 @@ Installing from github, need CMake > 2.6 , preferably > 2.8.3
  * GSL    - http://www.gnu.org/software/gsl/                ftp://ftp.gnu.org/gnu/gsl/gsl-1.15.tar.gz
  * FFTW3  - http://www.fftw.org/                            http://www.fftw.org/fftw-3.3.2.tar.gz
  
-##Installing Dependencies on Ubuntu 10.04, 12.04
+##Installing Building Dependencies on Ubuntu 10.04, 12.04
 <pre><code>
 sudo apt-get install \
  build-essential g++ \
@@ -70,4 +73,19 @@ sudo apt-get install \
  bison flex \
  freeglut3 freeglut3-dev \
  libxi6 libxi-dev libxmu6 libxmu-dev libxmu-headers
+</code></pre>
+
+
+##Installing Building Dependencies on Fedora 20
+<pre><code>
+sudo yum install \
+ cmake flex bison \
+ git \
+ freeglut freeglut-devel \
+ libXi-devel libXi \
+ libXmu libXmu-devel \
+ libXrandr libXrandr.devel \
+ libXpm-devel libXft-devel \
+ libXres-devel libXcomposite-devel \
+ redhat-lsb
 </code></pre>
