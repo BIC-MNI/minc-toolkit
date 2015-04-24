@@ -226,10 +226,14 @@ IF(NOT USE_SYSTEM_HDF5)
   SET(MINC2_deps ${MINC2_deps} HDF5)
 ENDIF(NOT USE_SYSTEM_HDF5)
 
-ADD_DEPENDENCIES(minc2 ${MINC2_deps})
+IF(MINC2_deps)
+  ADD_DEPENDENCIES(minc2 ${MINC2_deps})
+ENDIF(MINC2_deps)
 
 IF(MT_BUILD_SHARED_LIBS)
-  ADD_DEPENDENCIES(minc2_static  ${MINC2_deps})
+  IF(MINC2_deps)
+    ADD_DEPENDENCIES(minc2_static  ${MINC2_deps})
+  ENDIF(MINC2_deps)
 ENDIF(MT_BUILD_SHARED_LIBS)
 
 # Setup main minc variables
