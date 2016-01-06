@@ -40,7 +40,6 @@ macro(build_itkv3 install_prefix staging_prefix)
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
         -DBUILD_SHARED_LIBS:BOOL=${ITK_SHARED_LIBRARY}
-        -DCMAKE_SKIP_RPATH:BOOL=YES
         -DCMAKE_INSTALL_PREFIX:PATH=${install_prefix}
         -DCMAKE_CXX_FLAGS:STRING=${CMAKE_CXX_FLAGS}
         -DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}
@@ -56,6 +55,10 @@ macro(build_itkv3 install_prefix staging_prefix)
         -DITK_USE_CENTERED_PIXEL_COORDINATES_CONSISTENTLY:BOOL=ON
         -DITK_USE_TRANSFORM_IO_FACTORIES:BOOL=ON
         -DITK_LEGACY_REMOVE:BOOL=OFF
+        -DCMAKE_SKIP_RPATH:BOOL=OFF
+        -DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
+        -DMACOSX_RPATH:BOOL=ON
+        -DCMAKE_INSTALL_RPATH:PATH=${install_prefix}/lib${LIB_SUFFIX}
         -DUUID_INCLUDE_DIR:PATH= # to avoid dependecy on libuuid for now
         -DUUID_LIBRARY:FILEPATH= # to avoid dependecy on libuuid for now
         -DKWSYS_USE_MD5:BOOL=ON # Required by SlicerExecutionModel
