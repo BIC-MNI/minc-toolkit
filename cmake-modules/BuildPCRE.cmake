@@ -16,7 +16,7 @@ ExternalProject_Add(PCRE
   INSTALL_DIR     "${staging_prefix}"
   BUILD_COMMAND   $(MAKE) 
   INSTALL_COMMAND $(MAKE) DESTDIR=${staging_prefix} install 
-  CONFIGURE_COMMAND  ./configure --prefix=${install_prefix} --with-pic --disable-shared --enable-cpp CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} "CXXFLAGS=${EXT_CXX_FLAGS}" "CFLAGS=${EXT_C_FLAGS}"
+  CONFIGURE_COMMAND  ./configure --prefix=${install_prefix} --libdir=${install_prefix}/lib${LIB_SUFFIX} --with-pic --disable-shared --enable-cpp CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} "CXXFLAGS=${EXT_CXX_FLAGS}" "CFLAGS=${EXT_C_FLAGS}"
 )
 
 SET(PCRE_INCLUDE_DIR  ${staging_prefix}/${install_prefix}/include )
