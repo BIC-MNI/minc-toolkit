@@ -56,6 +56,7 @@ SET(CPACK_PACKAGE_FILE_NAME "minc-toolkit-${MINC_TOOLKIT_VERSION_FULL}-${MT_SYST
 SET(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_SOURCE_DIR}/cmake-modules")
 INCLUDE(PreventInSourceBuilds)
 AssureOutOfSourceBuilds(minc-toolkit)
+INCLUDE(InstallManPages)
 
 # default install directories
 SET(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_BINARY_DIR} CACHE PATH "Install path prefix, prepended onto install directories.")
