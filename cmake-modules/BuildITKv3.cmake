@@ -33,6 +33,7 @@ macro(build_itkv3 install_prefix staging_prefix)
 #    GIT_TAG "537ecca3a2762908c96508ab6f667c049aba44f6"
     URL     "https://github.com/vfonov/ITK/archive/release-3.20-fix-libtiff-v1.tar.gz"
     URL_MD5 "bba1ad3c4d0817f94bb34653acbba9c0"
+    PATCH_COMMAND patch -p 1 -d ${CMAKE_CURRENT_BINARY_DIR}/ITKv3 -u -i ${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules/patch_itkv3_gcc5.patch
     UPDATE_COMMAND ""
     SOURCE_DIR ITKv3
     BINARY_DIR ITKv3-build
