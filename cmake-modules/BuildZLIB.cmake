@@ -5,7 +5,7 @@ macro(build_zlib install_prefix staging_prefix)
 
 SET (ZLIB_VERSION_STRING 1.2)
 SET (ZLIB_VERSION_MAJOR  1.2)
-SET (ZLIB_VERSION_MINOR  8)
+SET (ZLIB_VERSION_MINOR  10)
 
 set(CMAKE_OSX_EXTERNAL_PROJECT_ARGS)
 if(APPLE)
@@ -19,8 +19,8 @@ endif()
 
 
 ExternalProject_Add(ZLIB
-  URL  "http://zlib.net/zlib-1.2.8.tar.gz"
-  URL_MD5 "44d667c142d7cda120332623eab69f40"
+  URL  "http://zlib.net/zlib-1.2.10.tar.gz"
+  URL_MD5 "d9794246f853d15ce0fcbf79b9a3cf13"
   UPDATE_COMMAND ""
   SOURCE_DIR ZLIB
   BINARY_DIR ZLIB-build
