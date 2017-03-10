@@ -26,5 +26,4 @@ SET(NETCDF_LIBRARY     ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libn
 SET(NETCDF_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include )
 SET(NETCDF_FOUND ON)
 
-
 endmacro(build_netcdf)

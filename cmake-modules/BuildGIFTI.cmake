@@ -5,19 +5,16 @@ macro(build_gifti install_prefix staging_prefix)
     set(CMAKE_GEN "${CMAKE_GENERATOR}")
   endif()
 
-  SET(GIFTI_CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
   SET(GIFTI_CMAKE_C_FLAGS_RELEASE   ${CMAKE_C_FLAGS_RELEASE})
   
-  SET(GIFTI_CMAKE_CXX_FLAGS_DEBUG   ${CMAKE_CXX_FLAGS_DEBUG})
   SET(GIFTI_CMAKE_C_FLAGS_DEBUG     ${CMAKE_C_FLAGS_DEBUG})
   
-  SET(GIFTI_CMAKE_CXX_FLAGS "-fPIC ${CMAKE_CXX_FLAGS}")
   SET(GIFTI_CMAKE_C_FLAGS   "-fPIC ${CMAKE_C_FLAGS}")
 
 ExternalProject_Add(GIFTI
   SOURCE_DIR GIFTI
   BINARY_DIR GIFTI-build
-  URL "file:///home/rvincent/Dropbox/MCIN/gifticlib-1.0.10-Source.tar.gz"
+  URL "http://packages.bic.mni.mcgill.ca/tgz/gifticlib-1.0.15-Source.tar.gz"
   URL_MD5 ""
   CMAKE_GENERATOR ${CMAKE_GEN}
   CMAKE_ARGS
@@ -27,11 +24,8 @@ ExternalProject_Add(GIFTI
         -DMACOSX_RPATH:BOOL=ON
         -DCMAKE_INSTALL_RPATH:PATH=${install_prefix}/lib${LIB_SUFFIX}
         -DCMAKE_INSTALL_PREFIX:PATH=${install_prefix}
-        "-DCMAKE_CXX_FLAGS_RELEASE:STRING=${GIFTI_CMAKE_CXX_FLAGS_RELEASE}"
         "-DCMAKE_C_FLAGS_RELEASE:STRING=${GIFTI_CMAKE_C_FLAGS_RELEASE}"
-        "-DCMAKE_CXX_FLAGS_DEBUG:STRING=${GIFTI_CMAKE_CXX_FLAGS_DEBUG}"
         "-DCMAKE_C_FLAGS_DEBUG:STRING=${GIFTI_CMAKE_C_FLAGS_DEBUG}"
-        "-DCMAKE_CXX_FLAGS:STRING=${GIFTI_CMAKE_CXX_FLAGS}"
         "-DCMAKE_C_FLAGS:STRING=${GIFTI_CMAKE_C_FLAGS}"
         -DCMAKE_EXE_LINKER_FLAGS:STRING=${CMAKE_EXE_LINKER_FLAGS}
         -DCMAKE_MODULE_LINKER_FLAGS:STRING=${CMAKE_MODULE_LINKER_FLAGS}
@@ -42,11 +36,13 @@ ExternalProject_Add(GIFTI
         -DZLIB_LIBRARY:FILEPATH=${ZLIB_LIBRARY}
         -DNIFTI_INCLUDE_DIR=${NIFTI_INCLUDE_DIR}
         -DNIFTI_LIBRARY=${NIFTI_LIBRARY}
+        -DZNZ_LIBRARY=${ZNZ_LIBRARY}
+        -DUSE_NIFTI_VERSION_1=ON
    INSTALL_COMMAND $(MAKE) install DESTDIR=${staging_prefix}
    INSTALL_DIR ${staging_prefix}/${install_prefix}
 )
 
-SET(GIFTI_LIBRARY     ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libgiftiio.a )
+SET(GIFTI_LIBRARY     ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libgiftiio.a expat )
 SET(GIFTI_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include/gifti )
 SET(GIFTI_FOUND ON)
 

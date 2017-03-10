@@ -32,7 +32,6 @@ SET(HDF5_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include )
 SET(HDF5_LIBRARY_DIR ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX} )
 SET(HDF5_LIBRARY     ${staging_prefix}/${install_prefix}/lib${LIB_SUFFIX}/libhdf5${HDF5_LIB_SUFFIX} )
 
-
 SET(HDF5_LIBRARIES    ${HDF5_LIBRARY})
 SET(HDF5_INCLUDE_DIRS ${HDF5_INCLUDE_DIR})
 

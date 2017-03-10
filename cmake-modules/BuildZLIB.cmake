@@ -41,15 +41,11 @@ ExternalProject_Add(ZLIB
 )
 
 
-
-
 SET(ZLIB_INCLUDE_DIR ${staging_prefix}/${install_prefix}/include )
 SET(ZLIB_LIBRARY     ${staging_prefix}/${install_prefix}/lib/libz.a )
 SET(ZLIB_DIR         ${staging_prefix}/${install_prefix}/share/cmake/ZLIB/ )
 SET(ZLIB_FOUND ON)
 
 configure_file(${CMAKE_SOURCE_DIR}/cmake-modules/ZLIB-config.cmake.install.in ${staging_prefix}/${install_prefix}/share/cmake/ZLIB/ZLIBConfig.cmake @ONLY )
-
-
 
 endmacro(build_zlib)
