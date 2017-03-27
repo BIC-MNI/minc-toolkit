@@ -32,7 +32,7 @@ Here is a list of bundled packages:
  * c3d      - Convert3D multipurpose image processing tool from UPENN
  * mincANTS - ANTS nonlinear registration tool from UPENN
 
-##Installation
+## Installation
 
 Installing from github, need CMake > 2.8.8 
 =======
@@ -47,17 +47,17 @@ Important: **CMAKE_BUILD_TYPE is set to RELEASE by default, if you have older bu
 <pre><code>
   cmake -DCMAKE_BUILD_TYPE:STRING=Release .
 </code></pre>
-##Dependencies
+## Dependencies
 
-###Following packages are needed to compile all tools:
+### Following packages are needed to compile all tools:
  * Perl  - http://www.perl.org/
  * BISON - http://www.gnu.org/software/bison/
  * FLEX  - http://flex.sf.net/
  * GLUT  - http://freeglut.sourceforge.net/
  * libxi   
  * libxmu 
-
-###Following packages are optional (i.e thay can be build as part of superbuild)
+ 
+### Following packages are optional (i.e thay can be build as part of superbuild)
  * zlib   - http://zlib.net/                                http://zlib.net/zlib-1.2.6.tar.gz
  * NETCDF - http://www.unidata.ucar.edu/software/netcdf/    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.0.1.tar.gz
  * HDF5   - http://www.hdfgroup.org/HDF5/                   http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.8/src/hdf5-1.8.8.tar.gz
@@ -65,7 +65,7 @@ Important: **CMAKE_BUILD_TYPE is set to RELEASE by default, if you have older bu
  * GSL    - http://www.gnu.org/software/gsl/                ftp://ftp.gnu.org/gnu/gsl/gsl-1.15.tar.gz
  * FFTW3  - http://www.fftw.org/                            http://www.fftw.org/fftw-3.3.2.tar.gz
  
-##Installing Building Dependencies on Ubuntu 10.04, 12.04
+## Installing Building Dependencies on Ubuntu 10.04, 12.04
 <pre><code>
 sudo apt-get install \
  build-essential g++ \
@@ -76,7 +76,7 @@ sudo apt-get install \
 </code></pre>
 
 
-##Installing Building Dependencies on Fedora 20
+## Installing Building Dependencies on Fedora 20
 <pre><code>
 sudo yum install \
  cmake flex bison \
