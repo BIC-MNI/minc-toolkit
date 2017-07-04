@@ -84,7 +84,7 @@ sudo yum install \
  freeglut freeglut-devel \
  libXi-devel libXi \
  libXmu libXmu-devel \
- libXrandr libXrandr.devel \
+ libXrandr libXrandr-devel \
  libXpm-devel libXft-devel \
  libXres-devel libXcomposite-devel \
  redhat-lsb
