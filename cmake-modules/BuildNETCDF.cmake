@@ -14,7 +14,7 @@ macro(build_netcdf install_prefix staging_prefix)
 ExternalProject_Add(NETCDF 
   SOURCE_DIR NETCDF
   URL "https://github.com/Unidata/netcdf-c/archive/v4.3.3.1.tar.gz"
-  URL_MD5 "5c9dad3705a3408d27f696e5b31fb88c"
+  URL_MD5 "41fe6758d46cccb1675693d155ee7001"
   BUILD_IN_SOURCE 1
   INSTALL_DIR     "${staging_prefix}"
   BUILD_COMMAND   $(MAKE) 
