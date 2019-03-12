@@ -1,12 +1,20 @@
 diff -ru ITKv3/Utilities/vxl/vcl/vcl_compiler.h ITKv3-patched/Utilities/vxl/vcl/vcl_compiler.h
 --- ITKv3/Utilities/vxl/vcl/vcl_compiler.h	2015-02-24 10:54:54.000000000 -0500
 +++ ITKv3-patched/Utilities/vxl/vcl/vcl_compiler.h	2016-07-07 17:40:03.015651756 -0400
-@@ -119,6 +119,8 @@
+@@ -119,6 +119,16 @@
  #  else
  #   define VCL_GCC_40
  #  endif
 +# elif (__GNUC__==5)
 +#  define VCL_GCC_50
++# elif (__GNUC__==6)
++#  define VCL_GCC_60
++# elif (__GNUC__==7)
++#  define VCL_GCC_70
++# elif (__GNUC__==8)
++#  define VCL_GCC_80
++# elif (__GNUC__==9)
++#  define VCL_GCC_90
  # else
  #  error "Dunno about this gcc"
  # endif
@@ -19,7 +27,7 @@ diff -ru ITKv3/Utilities/vxl/vcl/vcl_new.h ITKv3-patched/Utilities/vxl/vcl/vcl_n
  
  // -------------------- gcc with old library
 -#elif defined(VCL_GCC) && !defined(GNU_LIBSTDCXX_V3)
-+#elif defined(VCL_GCC) && !defined(GNU_LIBSTDCXX_V3) && !defined(VCL_GCC_50)
++#elif defined(VCL_GCC) && !defined(GNU_LIBSTDCXX_V3) && !defined(VCL_GCC_50) && !defined(VCL_GCC_50) && !defined(VCL_GCC_60) && !defined(VCL_GCC_70) && !defined(VCL_GCC_80) && !defined(VCL_GCC_90)
  # include <new.h>
  
  // -------------------- old MSVC
