@@ -8,7 +8,15 @@ project(minc-toolkit)
 enable_language(C)
 enable_language(CXX)
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.10)
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+IF(COMMAND CMAKE_POLICY)
+  if(POLICY CMP0083)
+     cmake_policy(SET CMP0083 NEW)
+  endif()
+ENDIF(COMMAND CMAKE_POLICY)
 
 SET(MINC_TOOLKIT_PACKAGE_VERSION_MAJOR 1)
 SET(MINC_TOOLKIT_PACKAGE_VERSION_MINOR 0)
