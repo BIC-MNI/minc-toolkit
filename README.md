@@ -1,4 +1,4 @@
-:warning: **Warning**
+# :warning: **Warning**
 
 Minc Toolkit v1 is deprecated. Please see [MINC Toolkit v2](https://github.com/BIC-MNI/minc-toolkit-v2).
 
